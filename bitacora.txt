@@ -1,0 +1,106 @@
+la URL completa = http://127.0.0.1:5501/index.html
+el protocolo = http
+el hosT = http://127.0.0.1
+el puerto = 5501
+la ruta = /index.html
+el método de la petición = GET
+el código de estado = 304
+
+DIIRECCION QUE NO EXISTE = http://127.0.0.1:5501/index.html/promociones.html
+CODIGO = 404
+El error 404 Not Found (Página no encontrada) es un código de estado HTTP que indica que el servidor logró comunicarse con la computadora o el navegador, pero no pudo encontrar el recurso o la página web solicitada
+
+HTML = Sera el encargado de darle la estructura a la pagina 
+css = sera el encargado de que darle los estilos 
+js = es el que ayuda a que el clientes tenga ciertas funciones en la pagina
+
+tabla de rutas
+
+| archivo origen | destino | ruta escrita |
+|:-------------- |:------- |:------------ |
+| index.html     | tarifas.html | ./paginas/tarifas.html|
+| index.html     | reservas.html | ./paginas/reservas.html|
+| tarifas.html     | index.html | ../index.html|
+| tarifas.html     | reservas.html | ./reservas.html|
+| reservas.html     | index.html | ../index.html|
+| reservas.html     | tarifas.html | ./tarifas.html|
+
+
+Utilice el input type text para el nombre ya que es el mas adecuado para solicitar "textos" pequeños, tambien el tipo email ya que es necesario contactar a los clientes por email para dar informacion relevante y select para darle opciones en el tipo de identificacion que puede tener el cliente tanto cc, como pasaporte o ce.
+
+| Campo | Dato de prueba | Resultado esperado | Resultado obtenido |
+| :--- | :--- | :--- | :--- |
+| **Nombre Completo** | "Al" (2 caracteres) | El navegador bloquea el envío y muestra error por menor al mínimo requerido (`minlength="3"`). | Correcto: El navegador advierte que se requieren al menos 3 caracteres. |
+| **Número de Identificación** | "12345" (5 dígitos) | El navegador rechaza el envío por no cumplir con la longitud de 6 a 10 dígitos del patrón (`pattern`). | Correcto: Muestra el título de validación indicando el rango correcto. |
+| **Correo electrónico** | "correo.com" (sin símbolo '@') | El navegador bloquea el envío por formato inválido del tipo `email`. | Correcto: El navegador indica que falta el signo '@'. |
+| **Teléfono** | "2001234567" (empieza por 2) | El navegador rechaza el envío porque el patrón exige que empiece estrictamente por el número 3. | Correcto: No permite enviar y resalta el campo de teléfono. |
+| **Fecha de Reserva** | "2026-10-15" (fuera de rango) | El navegador bloquea el envío por estar por debajo de la fecha mínima permitida (`min="2026-11-01"`). | Correcto: El selector restringe o avisa que la fecha está fuera del rango permitido. |
+| **Cantidad de Bicicletas** | "7" (mayor al límite) | El navegador rechaza el envío por superar el límite máximo permitido (`max="6"`). | Correcto: La flecha numérica detiene el incremento o el navegador emite advertencia de valor máximo. |
+| **Comentarios** | Texto de 305 caracteres | El navegador o el control impide escribir o deja ingresar pero bloquea el exceso según `maxlength="300"`. | Correcto: El textarea limita automáticamente la entrada a un máximo de 300 caracteres. |
+| **Términos y Condiciones** | Sin marcar el checkbox | El navegador detiene el envío debido al atributo `required` en el elemento de selección. | Correcto: El navegador exige marcar la casilla antes de procesar el formulario. |
+
+ENLACE GITHUB PAGE:
+
+
+|  Color | Codigo | Uso que propone el cliente |
+|:------ |:------ |:-------------------------- |
+|Verde Ruta | #1E7A4F | Botones y enlaces |
+|Naranja Pedal | #F39A2B | Destacados y botones secundarios |
+|Azul Noche | #14213D | Títulos y encabezado |
+|Crema | #FAF6EF | Fondo general |
+|Gris Asfalto | #5B6470 | Texto secundario |
+
+texto blanco sobre Verde Ruta = APTO PARA TEXTO NORMAL
+blanco sobre Naranja Pedal = NO APTO
+Azul Noche sobre Naranja Pedal = APTO PARA TEXTO GRANDE
+Azul Noche sobre Crema = APTO TEXTO NORMAL
+Gris Asfalto sobre Crema = NO APTO
+Verde Ruta sobre Crema= APTO NORMAL
+Naranja Pedal sobre Crema  = NO APTO
+blanco sobre Azul Noche =  APTO GRANDE
+
+propiedad que se hereda=
+font-family="Open Sans", sans-serif
+
+propiedad que no hereda= 
+height=1131.44px
+
+==================================================
+BITÁCORA DE DEPURACIÓN - ESPECIFICIDAD Y CSS
+==================================================
+
+| Selector Evaluado | Desglose de Especificidad (ID, Clases, Elementos) | Valor Calculado |
+| :--- | :--- | :--- |
+| a | (0, 0, 1) | 0-0-1 |
+| .activo | (0, 1, 0) | 0-1-0 |
+| #menu a | (1, 0, 1) | 1-0-1 |
+| #menu a.activo | (1, 1, 1) | 1-1-1 |
+
+CAUSA DEL PROBLEMA EN DEVTOOLS:
+El navegador no aplicaba el estilo visual de la clase `.activo` (valor 0-1-0) porque existía una regla previa o un selector compuesto con mayor especificidad, como `#menu a` (valor 1-0-1), que sobrescribía el color o propiedad del enlace. Al tener mayor peso el ID del contenedor, la clase por sí sola quedaba anulada.
+
+Cierre de Bitácora: Resumen de MiniRetos y Mejoras
+1. Estructura base, tipografías y modelo de caja
+Lo que construimos: Se configuró el restablecimiento global con box-sizing: border-box, se implementaron las variables CSS personalizadas con la paleta oficial de Rueda Libre (Verde Ruta, Naranja Pedal, Azul Noche, Crema y Gris Asfalto) y las tipografías de Google Fonts (Montserrat y Open Sans). Además, se estructuró el ancho del contenido principal (main) usando medidas en rem con centrado automático y se dotó a la portada de una altura mínima adaptada al alto de la ventana (vh).
+
+Lo que mejorarías: En futuras versiones, se podría ampliar el sistema de variables de espaciado y tipografía para cubrir breakpoints responsivos más avanzados (como tabletas y móviles pequeños) mediante consultas de medios (media queries).
+
+2. Navegación y diseño limpio del encabezado
+Lo que construimos: Se transformó el menú de navegación (#menu) en una barra horizontal fluida mediante Flexbox, asegurando una transición elegante en los enlaces, estados de foco y hover accesibles, y destacando visualmente la página activa con la especificidad correcta.
+
+Lo que mejorarías: Implementar un menú de hamburguesa desplegable para pantallas móviles pequeños (hamburger menu), garantizando que la navegación no se amontone en dispositivos con pantallas muy reducidas.
+
+3. Tarjetas de servicios con proporción uniforme y etiqueta "Nuevo"
+Lo que construimos: Se rediseñó la sección de servicios utilizando CSS Grid, convirtiendo cada elemento en una tarjeta simétrica (display: flex) con bordes redondeados, relleno basado en variables y control estricto de las imágenes (object-fit: cover con altura fija) para que todas luzcan idénticas. Se añadió la etiqueta flotante "Nuevo" en la esquina superior mediante posicionamiento absoluto sin alterar el flujo del contenido.
+
+Lo que mejorarías: Agregar efectos sutiles de elevación o zoom en las tarjetas al pasar el cursor (transform: translateY(-4px)) para dar una experiencia de interacción más moderna y atractiva al usuario.
+
+4. Tablas y formularios profesionales
+Lo que construimos: Se optimizó la legibilidad de las tablas con celdas espaciosas, bordes limpios, filas alternadas y un encabezado en Azul Noche con alto contraste. Para los formularios, se ordenó la estructura de modo que cada etiqueta (<label>) quede estrictamente sobre su respectivo campo, los elementos ocupen el 100% del ancho disponible, los grupos tengan separación modular y el botón de acción cuente con un relleno generoso y estados de foco seguros.
+
+Lo que mejorarías: Integrar validación visual en tiempo real en los campos del formulario (bordes verdes o rojos según el estado de llenado) para guiar mejor al usuario al momento de realizar una reserva.
+
+5. Elementos interactivos flotantes (WhatsApp y UI)
+Lo que construimos: Se implementó con éxito el botón flotante de WhatsApp posicionado de forma fija (position: fixed) en la esquina inferior derecha en todas las páginas del sitio, asegurando su visibilidad constante durante el scroll, además de sus respectivos estados de accesibilidad por teclado.
+
+Lo que mejorarías: Añadir una pequeña animación de pulso sutil al botón flotante de WhatsApp para captar la atención del usuario de manera amigable tras unos segundos de inactividad en la página.

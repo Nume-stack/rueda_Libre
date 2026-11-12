@@ -1,0 +1,300 @@
+:root {
+    /* Tipografías */
+    --font-titulos: "Montserrat", sans-serif; /* Títulos */
+    --font-textos: "Open Sans", sans-serif;   /* Textos */
+
+    /* Colores oficiales de la paleta del cliente */
+    --color-verde-ruta: #1E7A4F;       /* Verde Ruta -> Botones y enlaces */
+    --color-naranja-pedal: #F39A2B;    /* Naranja Pedal -> Destacados y botones secundarios */
+    --color-azul-noche: #14213D;       /* Azul Noche -> Títulos y encabezado */
+    --color-crema: #FAF6EF;            /* Crema -> Fondo general */
+    --color-gris-asfalto: #5B6470;     /* Gris Asfalto -> Texto secundario */
+
+    /* Espaciados (unificados en español) */
+    --espacio-sm: 0.5rem;
+    --espacio-md: 1rem;
+    --espacio-lg: 2rem;
+}
+
+/* Aplicar box-sizing a todos los elementos y pseudo-elementos */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-textos);
+    background-color: var(--color-crema);
+    color: var(--color-gris-asfalto);
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-titulos);
+    color: var(--color-azul-noche);
+}
+
+/* Selector corregido aumentando la especificidad correctamente */
+#menu a.activo {
+    color: var(--color-verde-ruta); 
+    font-weight: 600;
+}
+
+/* Estilos para el menú de navegación */
+#menu {
+    list-style: none;
+    background-color: var(--color-crema);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--espacio-lg);
+    padding: var(--espacio-sm) 0;
+    margin: 0;
+}
+
+/* Estilos para los elementos del menú */
+#menu li a {
+    text-decoration: none;
+    font-weight: 400;
+    border-radius: 5px;
+    color: var(--color-gris-asfalto);
+    transition: font-weight 0.3s ease; /* Transición suave para el cambio de peso de fuente */
+}
+
+/* Estilos para los elementos del menú cuando paso el mouse por encima */
+#menu li a:hover {
+    background-color: var(--color-naranja-pedal);
+    font-weight: 900;
+    padding: 0.5rem 1rem; /* Añade relleno para que el fondo se vea mejor */
+}
+
+/* Estilos para los elementos del menú cuando están enfocados */
+#menu li a:focus {
+    font-weight: 900;
+    background-color: var(--color-naranja-pedal);
+    outline: 2px solid black; /* Añade un contorno para accesibilidad */
+}
+
+/* Estilos para los elementos de reserva ahora */
+.reservar-a {
+    background-color: var(--color-verde-ruta);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+}
+
+/* Estilos para los elementos de reserva ahora cuando paso el mouse por encima */
+.reservar-a:hover {
+    background-color: var(--color-naranja-pedal);
+}
+
+/* Estilos para los elementos de reserva ahora cuando están enfocados */
+.reservar-a:focus {
+    background-color: var(--color-naranja-pedal);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(243, 154, 43, 0.4);
+}
+
+/* Estilos para los elementos de formulario */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #2980b9;
+    background-color: #ebf5fb;
+    box-shadow: 0 0 0 3px rgba(41, 128, 185, 0.3); /* Reemplazo de contorno seguro y elegante */
+}
+
+/* 1. Limitar el ancho del contenido principal con rem y centrarlo */
+main {
+    max-width: 65rem; /* Ajustable según el ancho máximo que prefieras (aprox. 1040px) */
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* 2. Altura mínima relativa al alto de la ventana para la portada de inicio */
+.portada-inicio {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Contenedor de servicios en cuadrícula (grid) */
+#servicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--espacio-lg);
+    margin-top: var(--espacio-lg);
+}
+
+/* Cada tarjeta se estira para medir lo mismo que la más alta */
+#servicios article {
+    position: relative; /* Necesario para albergar la etiqueta absoluta "Nuevo" sin desplazar contenido */
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: var(--espacio-md);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Empuja el contenido para alinearse */
+}
+
+/* Etiqueta "Nuevo" flotante en la esquina superior */
+.nuevo {
+    position: absolute;
+    top: var(--espacio-md);
+    right: var(--espacio-md);
+    background-color: var(--color-naranja-pedal);
+    color: var(--color-azul-noche);
+    font-family: var(--font-titulos);
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 0.25rem 0.65rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+/* Hacer que todas las imágenes tengan exactamente el mismo tamaño y proporción */
+#servicios article img {
+    width: 100%;
+    height: 200px; /* Altura fija para que todas midan exactamente lo mismo */
+    object-fit: cover; /* Evita que la foto se deforme rellenando el espacio de forma limpia */
+    border-radius: 4px;
+    margin-bottom: var(--espacio-md);
+}
+
+#servicios article h3 {
+    margin-top: var(--espacio-sm);
+    font-size: 1.25rem;
+}
+
+/* ==========================================================
+   4. Mejora de lectura en las tablas
+   ========================================================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--espacio-lg) 0;
+    background-color: #ffffff;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: var(--espacio-md); /* Relleno generoso en celdas */
+    border: 1px solid #d1d5db;    /* Bordes limpios */
+    text-align: left;
+}
+
+th {
+    background-color: var(--color-azul-noche); /* Fondo de marca con alto contraste */
+    color: #ffffff;
+    font-family: var(--font-titulos);
+}
+
+tr:nth-child(even) {
+    background-color: #f9fafb; /* Cebra sutil para facilitar la lectura */
+}
+
+
+/* ==========================================================
+   5. Orden del formulario y accesibilidad
+   ========================================================== */
+form fieldset {
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: var(--espacio-lg);
+    background-color: #ffffff;
+    margin-bottom: var(--espacio-lg); /* Separación entre grupos */
+}
+
+/* Cada etiqueta sobre su campo */
+form label {
+    display: block;
+    margin-top: var(--espacio-md);
+    margin-bottom: var(--espacio-sm);
+    font-weight: 600;
+    color: var(--color-azul-noche);
+}
+
+/* Campos a todo el ancho disponible */
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="date"],
+form select,
+form textarea {
+    width: 100%;
+    padding: 0.75rem var(--espacio-md);
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    font-family: var(--font-textos);
+    background-color: #ffffff;
+}
+
+/* Botón de envío con relleno generoso */
+form button[type="submit"],
+form input[type="submit"] {
+    display: inline-block;
+    background-color: var(--color-verde-ruta);
+    color: white;
+    text-decoration: none;
+    padding: 1rem 2rem; /* Relleno generoso */
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: var(--espacio-lg);
+    transition: background-color 0.3s ease;
+}
+
+form button[type="submit"]:hover,
+form input[type="submit"]:hover {
+    background-color: var(--color-naranja-pedal);
+}
+
+form button[type="submit"]:focus,
+form input[type="submit"]:focus {
+    outline: none;
+    background-color: var(--color-naranja-pedal);
+    box-shadow: 0 0 0 3px rgba(243, 154, 43, 0.4);
+}
+
+/* ==========================================================
+   6. Botón flotante de WhatsApp permanente
+   ========================================================== */
+.btn-whatsapp {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    background-color: var(--color-verde-ruta);
+    color: #ffffff;
+    font-family: var(--font-titulos);
+    font-weight: 700;
+    text-decoration: none;
+    padding: 0.85rem 1.25rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    z-index: 1000;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-whatsapp:hover {
+    background-color: var(--color-naranja-pedal);
+    color: var(--color-azul-noche);
+    transform: translateY(-2px);
+}
+
+.btn-whatsapp:focus {
+    outline: 3px solid var(--color-azul-noche);
+    outline-offset: 2px;
+}
