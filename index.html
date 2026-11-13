@@ -20,6 +20,7 @@
 
 <body>
     <header>
+        <h1>Rueda Libre | Alquiler de bicicletas en Medellín</h1>
         <nav>
             <ul id="menu">
                 <li>
@@ -37,11 +38,91 @@
 
     <main class="portada-inicio">
 
-        <section>
-            <h1>Rueda Libre | Alquiler de bicicletas en Medellín</h1>
-            <p>¡Bienvenidos a Rueda Libre! Tu mejor opción para recorrer y descubrir la ciudad sobre dos ruedas.</p>
+        <section class="portada">
+            <h2>¡Bienvenidos a Rueda Libre! Tu mejor opción para recorrer y descubrir la ciudad sobre dos ruedas.</h2>
             <a href="./paginas/reservas.html" class="reservar-a">Reservar ahora</a>
+            <img src="./img/portada.jpg" alt="Ciclista recorriendo Medellín en bicicleta de Rueda Libre" width="900">
         </section>
+
+        <section class="galeria-rutas">
+            <h2>Nuestras Rutas</h2>
+            <p class="subtitulo-galeria">Explora los paisajes más impresionantes de Medellín y sus alrededores sobre dos
+                ruedas.</p>
+
+            <article class="tarjeta-ruta">
+                <img src="./img/sabores-barrio.jpg" alt="Ruta miradores de Medellín">
+                <h3>Sabores de Barrio</h3>
+                <p>Nivel: <strong>Intermedio</strong></p>
+            </article>
+
+            <article class="tarjeta-ruta">
+                <img src="./img/Palmas.jpg" alt="Ruta reto las palmas">
+                <h3>Reto las palmas</h3>
+                <p>Nivel: <strong>Avanzado</strong></p>
+            </article>
+
+            <article class="tarjeta-ruta">
+                <img src="./img/parque-rio.jpg" alt="Ruta rio y parques">
+                <h3>Rio y Parques</h3>
+                <p>Nivel: <strong>Principiante</strong></p>
+            </article>
+        </section>
+
+        <h2>Nuestra Flota</h2>
+        <section id="flota">
+
+
+            <article>
+                <img src="./img/clasica-urbana.jpeg" alt="Bicicleta Urbana Clásica">
+                <h3>Urbana Clásica</h3>
+                <p>Cómoda y liviana para las ciclorrutas.</p>
+                <p><strong>$10.000</strong></p>
+            </article>
+
+            <article>
+                <img src="./img/urbana-plegable.jpeg" alt="Bicicleta Urbana Plegable">
+                <h3>Urbana Plegable</h3>
+                <p>Se dobla en segundos; ideal para combinar con el metro.</p>
+                <p><strong>$12.000</strong></p>
+            </article>
+
+            <article>
+                <img src="./img/montaña-trail.jpeg" alt="Bicicleta de Montaña Trail">
+                <h3>Montaña Trail</h3>
+                <p>Suspensión delantera y 21 cambios para las subidas.</p>
+                <p><strong>$15.000</strong></p>
+            </article>
+
+            <article>
+                <img src="./img/gravel-aventura.jpeg" alt="Bicicleta Gravel Aventura">
+                <h3>Gravel Aventura</h3>
+                <p>Para rutas mixtas de asfalto y destapado.</p>
+                <p><strong>$18.000</strong></p>
+            </article>
+
+            <article>
+                <img src="./img/electrica-urb.jpeg" alt="Bicicleta Eléctrica Urbana">
+                <h3>Eléctrica Urbana</h3>
+                <p>Asistencia eléctrica con 45 km de autonomía.</p>
+                <p><strong>$25.000</strong></p>
+            </article>
+
+            <article>
+                <img src="./img/infantil.png" alt="Bicicleta Infantil">
+                <h3>Infantil</h3>
+                <p>Para niños de 6 a 10 años.</p>
+                <p><strong>$8.000</strong></p>
+            </article>
+
+            <article>
+                <img src="./img/tandem.jpeg" alt="Bicicleta Tándem">
+                <h3>Tándem</h3>
+                <p>Para dos personas; perfecta para pasear en pareja</p>
+                <p><strong>$20.000</strong></p>
+            </article>
+        </section>
+
+
         <section>
             <h2>¿Quiénes somos?</h2>
             <p>Somos una empresa dedicada al alquiler de bicicletas en Medellín, con el objetivo de promover un estilo
@@ -55,7 +136,7 @@
 
             <article>
                 <span class="nuevo">Nuevo</span>
-                <img src="./img/bicicleta.jpg" alt="Bicicletas eléctricas disponibles para alquilar">
+                <img src="./img/cicla.jpg" alt="Bicicletas eléctricas disponibles para alquilar">
                 <h3>Bicicletas Eléctricas</h3>
                 <p>Alquila nuestra selección de bicicletas eléctricas de <strong>alta calidad</strong> para subir las
                     lomas de Medellín sin esfuerzo.</p>
@@ -102,7 +183,22 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Rueda Libre. Contacto: <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a></p>
+        <section>
+            <h3>Rueda Libre</h3>
+            <p>&copy; 2026 Rueda Libre. Explora Medellín sobre dos ruedas.</p>
+        </section>
+
+        <section>
+            <h3>Contacto</h3>
+            <p>Correo: <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a></p>
+            <p>Ubicación: Medellín, Colombia</p>
+        </section>
+
+        <section>
+            <h3>Horario</h3>
+            <p>Lunes a viernes: 7:00 a.m. - 7:00 p.m.</p>
+            <p>Sabados, Domingos y festivos: 6:00 a.m. - 2:00 p.m.</p>
+        </section>
     </footer>
     <a href="https://wa.me/573000000000" class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
         WhatsApp

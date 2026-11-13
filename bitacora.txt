@@ -104,3 +104,78 @@ Lo que mejorarías: Integrar validación visual en tiempo real en los campos del
 Lo que construimos: Se implementó con éxito el botón flotante de WhatsApp posicionado de forma fija (position: fixed) en la esquina inferior derecha en todas las páginas del sitio, asegurando su visibilidad constante durante el scroll, además de sus respectivos estados de accesibilidad por teclado.
 
 Lo que mejorarías: Añadir una pequeña animación de pulso sutil al botón flotante de WhatsApp para captar la atención del usuario de manera amigable tras unos segundos de inactividad en la página.
+
+Semana 2
+Cuando estrecho la pantalla el nombre de rueda libre se desplaza para arriba y el menu de navegacion queda abajo del nombre, como si fuera una columna de 2 filas.
+
+================================
+La flota cuadricula grid
+==================================
+| pixeles | # columnas |
+|:------- |:---------- |
+| 1820    |  3         |
+| 900     |   2        |
+| 500     | 1          |
+
+==========================================
+La flota en Bootstrap
+==========================================
+tiempo invertido = 1h 45mn
+
+------------------------
+Lineas de css de flota
+------------------------
+#flota {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--espacio-lg);
+    margin-top: var(--espacio-lg);
+}
+
+/* Cada tarjeta se estira para medir lo mismo que la más alta */
+#flota article {
+    position: relative; /* Necesario para albergar la etiqueta absoluta "Nuevo" sin desplazar contenido */
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: var(--espacio-md);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+
+Bootstrap me entrega elementos ya hechos por si solos, ademas del responsive que de por si es un ahorro y un dolor de cabeza que muchas veces se puede ahorrar, sin embargo, la personalizacion se pierde por completo, ya que las clases estan definidas y son etiquetas y objetos ya creados por el mismo framework por lo que es necesario adapatarse a ellos.
+
+g-4: Aplica un espaciado uniforme (gutter) de tamaño 4 entre las columnas y filas de un contenedor Grid de Bootstrap, evitando que las tarjetas queden pegadas.
+
+flex-column flex-md-row: Cambia la dirección del contenedor flexible a columna vertical en pantallas pequeñas (móviles) y la convierte horizontal (fila) de forma automática a partir del punto de ruptura md en adelante.
+
+d-none d-md-block: Controla la visibilidad adaptativa; oculta el elemento por defecto (d-none) en dispositivos móviles y lo muestra como un bloque visible (d-md-block) en pantallas medianas y grandes.
+
+align-items-center: Alinea verticalmente los elementos hijos de un contenedor flexible a lo largo del eje transversal, manteniéndolos perfectamente centrados.
+
+justify-content-between: Distribuye los elementos hijos de un contenedor flexible a lo largo del eje principal, ubicando un extremo a la izquierda y el otro a la derecha con el espacio máximo disponible entre ellos.
+
+
+====================================
+inicio migra a Bootstrap
+====================================
+
+Tuve muchos conflictos para el manejo del tamaño de las cartas, se pusieron de tamaños donde la flota y los servicios se dañaron a tal punto que no fui capaz de resolverlos, por eso mismo decidi hacer el index-prueba.html ya que no fui capaz de resolver los conflictos. Sin embargos es importante para mi mostrar la evidencia de que al menos se intento y por la misma razon deje la pagina de index quieta, ya que queria mostrar un producto bonito.
+
+=======================================
+prototipo nocturno
+=======================================
+
+Construcción del botón en Semana 2 (Bootstrap 5.3):
+
+Se emplearon componentes predefinidos y clases semánticas del framework como .btn y .btn-success, complementadas con espaciados y sombras precompiladas (px-4, py-2, shadow). El estilo visual venía heredado globalmente por la hoja de estilos de Bootstrap.
+
+Construcción del botón hoy (Tailwind CSS - Utility-First):
+
+Se diseñó desde cero combinando clases atómicas de utilidad directamente en el marcado: bg-[#1E7A4F] para el color de fondo institucional, hover:bg-[#F39A2B] para la interacción al pasar el cursor, text-white, font-bold, px-8 py-3 para el relleno y rounded-lg shadow-sm para los bordes y elevación.
+
+Diferencia clave entre un framework de componentes (Bootstrap) y uno utility-first (Tailwind):
+
+Un framework de componentes proporciona elementos visuales listos para usar con un diseño predeterminado (como tarjetas o botones con estilos fijos que luego se sobrescriben), mientras que un framework utility-first ofrece bloques de construcción atómicos de bajo nivel que permiten componer interfaces únicas directamente en el HTML sin necesidad de escribir CSS personalizado ni luchar contra estilos heredados.
