@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Componentes - Proyecto Nocturna</title>
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+    <link rel="stylesheet" href="./src/output.css">
+</head>
+
+<body class="bg-blanco-niebla dark:bg-azul-noche text-azul-noche dark:text-blanco-niebla min-h-screen p-6 md:p-12 flex flex-col items-center font-cuerpo transition-colors">
+
+    <main class="w-full max-w-4xl bg-white dark:bg-[#1B2B4E] border border-gris-asfalto/20 dark:border-blanco-niebla/15 p-8 rounded-xl shadow-xl space-y-10">
+
+        <div>
+            <span class="inline-block bg-amarillo-farol text-azul-noche font-titulo text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full mb-3">
+                Kit de Componentes &middot; UI Design
+            </span>
+            <h1 class="font-titulo text-3xl md:text-4xl font-extrabold text-azul-noche dark:text-blanco-niebla tracking-tight">
+                Biblioteca de Elementos Nocturna
+            </h1>
+            <p class="text-gris-asfalto dark:text-blanco-niebla/75 mt-2">
+                Componentes con colores de marca, tipografías Montserrat / Open Sans y soporte para modo oscuro.
+            </p>
+        </div>
+
+ 
+        <section class="space-y-4">
+            <h2 class="font-titulo text-xl font-bold border-b border-gris-asfalto/20 dark:border-blanco-niebla/15 pb-2">1. Botones Interactivos</h2>
+            <div class="flex flex-wrap gap-4 items-center font-titulo">
+                <a href="#" class="inline-block bg-verde-ruta hover:bg-naranja-senal text-white hover:text-azul-noche dark:bg-amarillo-farol dark:text-azul-noche dark:hover:bg-naranja-senal font-bold text-base px-8 py-3 rounded-lg shadow-sm transition-all duration-200">
+                    Inscríbete
+                </a>
+                <button class="px-5 py-2.5 rounded-lg font-semibold text-azul-noche dark:text-blanco-niebla border border-gris-asfalto/40 dark:border-blanco-niebla/30 hover:bg-blanco-niebla dark:hover:bg-azul-noche transition-colors focus:outline-none focus:ring-2 focus:ring-verde-ruta dark:focus:ring-amarillo-farol">
+                    Ver detalles
+                </button>
+                <button class="px-5 py-2.5 rounded-lg font-semibold text-azul-noche dark:text-blanco-niebla bg-blanco-niebla dark:bg-azul-noche/70 hover:bg-gris-asfalto/20 transition-colors focus:outline-none focus:ring-2 focus:ring-gris-asfalto">
+                    Cancelar
+                </button>
+            </div>
+        </section>
+
+
+        <section class="space-y-4">
+            <h2 class="font-titulo text-xl font-bold border-b border-gris-asfalto/20 dark:border-blanco-niebla/15 pb-2">2. Alertas del Sistema</h2>
+            
+   
+            <div class="p-4 rounded-lg bg-azul-noche/10 dark:bg-azul-noche border-l-4 border-azul-noche dark:border-blanco-niebla flex flex-col gap-1">
+                <span class="font-titulo font-bold text-azul-noche dark:text-blanco-niebla">Información importante</span>
+                <p class="text-sm text-gris-asfalto dark:text-blanco-niebla/80">Las inscripciones para la ruta nocturna cierran dos horas antes de iniciar el recorrido.</p>
+            </div>
+
+            <div role="alert" class="p-4 rounded-lg bg-verde-ruta/15 dark:bg-verde-ruta/25 border-l-4 border-verde-ruta dark:border-amarillo-farol flex flex-col gap-1">
+                <span class="font-titulo font-bold text-verde-ruta dark:text-amarillo-farol">¡Inscripción exitosa!</span>
+                <p class="text-sm text-azul-noche dark:text-blanco-niebla/90">Te has registrado correctamente. Revisa tu correo electrónico con los detalles del punto de encuentro.</p>
+            </div>
+
+    
+            <div class="p-4 rounded-lg bg-naranja-senal/20 dark:bg-naranja-senal/20 border-l-4 border-naranja-senal flex flex-col gap-1">
+                <span class="font-titulo font-bold text-azul-noche dark:text-naranja-senal">Advertencia de clima</span>
+                <p class="text-sm text-azul-noche dark:text-blanco-niebla/85">Se pronostica alta probabilidad de lluvia nocturna. Recuerda llevar tu impermeable reflectivo.</p>
+            </div>
+        </section>
+
+
+        <section class="space-y-6">
+            <h2 class="font-titulo text-xl font-bold border-b border-gris-asfalto/20 dark:border-blanco-niebla/15 pb-2">3. Campos de Formulario</h2>
+            <form class="space-y-5" onsubmit="event.preventDefault();">
+                <div class="flex flex-col gap-1.5">
+                    <label for="correo" class="text-sm font-semibold">Correo electrónico</label>
+                    <input type="email" id="correo" placeholder="ejemplo@correo.com"
+                        class="w-full px-4 py-2.5 rounded-lg bg-blanco-niebla dark:bg-azul-noche border border-gris-asfalto/40 dark:border-blanco-niebla/25 text-azul-noche dark:text-blanco-niebla placeholder-gris-asfalto dark:placeholder-blanco-niebla/50 text-sm focus:outline-none focus:ring-2 focus:ring-verde-ruta dark:focus:ring-amarillo-farol transition-all">
+                    <span class="text-xs text-gris-asfalto dark:text-blanco-niebla/65">Nunca compartiremos tu correo con terceros.</span>
+                </div>
+
+                <div class="flex flex-col gap-1.5">
+                    <label for="celular" class="text-sm font-semibold">Número de celular</label>
+                    <input type="tel" id="celular" placeholder="300 123 4567"
+                        class="w-full px-4 py-2.5 rounded-lg bg-blanco-niebla dark:bg-azul-noche border border-gris-asfalto/40 dark:border-blanco-niebla/25 text-azul-noche dark:text-blanco-niebla placeholder-gris-asfalto dark:placeholder-blanco-niebla/50 text-sm focus:outline-none focus:ring-2 focus:ring-verde-ruta dark:focus:ring-amarillo-farol transition-all">
+                    <span class="text-xs text-gris-asfalto dark:text-blanco-niebla/65">Útil para enviarte alertas de última hora por WhatsApp o SMS.</span>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+</body>
+
+</html>

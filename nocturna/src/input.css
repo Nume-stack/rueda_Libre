@@ -1,0 +1,33 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@theme {
+
+  --color-azul-noche: #14213D;
+  --color-verde-ruta: #1E7A4F;
+  --color-naranja-senal: #F39A2B;
+  --color-amarillo-farol: #FFD166;
+  --color-blanco-niebla: #F0F1F5;
+  --color-gris-asfalto: #5B5B70;
+
+
+  --font-titulo: "Montserrat", sans-serif;
+  --font-cuerpo: "Open Sans", sans-serif;
+}
+
+@layer components {
+
+  .btn-marca-primario {
+    @apply inline-block px-5 py-2.5 rounded-lg font-titulo font-bold text-sm text-center bg-verde-ruta text-white shadow-sm transition-all duration-200 hover:bg-naranja-senal hover:text-azul-noche dark:bg-amarillo-farol dark:text-azul-noche dark:hover:bg-naranja-senal focus:outline-none focus:ring-2 focus:ring-verde-ruta dark:focus:ring-amarillo-farol;
+  }
+
+
+  .btn-marca-secundario {
+    @apply inline-block px-5 py-2.5 rounded-lg font-titulo font-semibold text-sm text-center text-azul-noche border border-gris-asfalto/40 transition-colors hover:bg-blanco-niebla dark:text-blanco-niebla dark:border-blanco-niebla/30 dark:hover:bg-azul-noche focus:outline-none focus:ring-2 focus:ring-verde-ruta dark:focus:ring-amarillo-farol;
+  }
+
+
+  .input-marca {
+    @apply w-full px-4 py-2.5 rounded-lg text-sm bg-blanco-niebla border border-gris-asfalto/40 text-azul-noche placeholder-gris-asfalto transition-all dark:bg-azul-noche dark:border-blanco-niebla/25 dark:text-blanco-niebla dark:placeholder-blanco-niebla/50 focus:outline-none focus:ring-2 focus:ring-verde-ruta dark:focus:ring-amarillo-farol;
+  }
+}

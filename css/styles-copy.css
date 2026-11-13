@@ -1,0 +1,572 @@
+:root {
+    /* Tipografías */
+    --font-titulos: "Montserrat", sans-serif; /* Títulos */
+    --font-textos: "Open Sans", sans-serif;   /* Textos */
+
+    /* Colores oficiales de la paleta del cliente */
+    --color-verde-ruta: #1E7A4F;       /* Verde Ruta -> Botones y enlaces */
+    --color-naranja-pedal: #F39A2B;    /* Naranja Pedal -> Destacados y botones secundarios */
+    --color-azul-noche: #14213D;       /* Azul Noche -> Títulos y encabezado */
+    --color-crema: #FAF6EF;            /* Crema -> Fondo general */
+    --color-gris-asfalto: #5B6470;     /* Gris Asfalto -> Texto secundario */
+
+    /* Espaciados (unificados en español) */
+    --espacio-sm: 0.5rem;
+    --espacio-md: 1rem;
+    --espacio-lg: 2rem;
+}
+
+/* Aplicar box-sizing a todos los elementos y pseudo-elementos */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-textos);
+    background-color: var(--color-crema);
+    color: var(--color-gris-asfalto);
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-titulos);
+    color: var(--color-azul-noche);
+}
+
+/* Selector corregido aumentando la especificidad correctamente */
+#menu a.activo {
+    color: var(--color-verde-ruta); 
+    font-weight: 600;
+}
+
+/* Estilos para el menú de navegación */
+#menu {
+    list-style: none;
+    background-color: var(--color-crema);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--espacio-lg);
+    padding: var(--espacio-sm) 0;
+    margin: 0;
+}
+
+/* Estilos para los elementos del menú */
+#menu li a {
+    text-decoration: none;
+    font-weight: 400;
+    border-radius: 5px;
+    color: var(--color-gris-asfalto);
+    transition: font-weight 0.3s ease; /* Transición suave para el cambio de peso de fuente */
+}
+
+/* Estilos para los elementos del menú cuando paso el mouse por encima */
+#menu li a:hover {
+    background-color: var(--color-naranja-pedal);
+    font-weight: 900;
+    padding: 0.5rem 1rem; /* Añade relleno para que el fondo se vea mejor */
+}
+
+/* Estilos para los elementos del menú cuando están enfocados */
+#menu li a:focus {
+    font-weight: 900;
+    background-color: var(--color-naranja-pedal);
+    outline: 2px solid black; /* Añade un contorno para accesibilidad */
+}
+
+/* Estilos para los elementos de reserva ahora */
+.reservar-a {
+    background-color: var(--color-verde-ruta);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+}
+
+/* Estilos para los elementos de reserva ahora cuando paso el mouse por encima */
+.reservar-a:hover {
+    background-color: var(--color-naranja-pedal);
+}
+
+/* Estilos para los elementos de reserva ahora cuando están enfocados */
+.reservar-a:focus {
+    background-color: var(--color-naranja-pedal);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(243, 154, 43, 0.4);
+}
+
+/* Estilos para los elementos de formulario */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #2980b9;
+    background-color: #ebf5fb;
+    box-shadow: 0 0 0 3px rgba(41, 128, 185, 0.3); /* Reemplazo de contorno seguro y elegante */
+}
+
+/* 1. Limitar el ancho del contenido principal con rem y centrarlo */
+main {
+    max-width: 65rem; /* Ajustable según el ancho máximo que prefieras (aprox. 1040px) */
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* 2. Altura mínima relativa al alto de la ventana para la portada de inicio */
+.portada-inicio {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Contenedor de servicios en cuadrícula (grid) */
+#servicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--espacio-lg);
+    margin-top: var(--espacio-lg);
+}
+
+/* Cada tarjeta se estira para medir lo mismo que la más alta */
+#servicios article {
+    position: relative; /* Necesario para albergar la etiqueta absoluta "Nuevo" sin desplazar contenido */
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: var(--espacio-md);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Empuja el contenido para alinearse */
+}
+
+/* Etiqueta "Nuevo" flotante en la esquina superior */
+.nuevo {
+    position: absolute;
+    top: var(--espacio-md);
+    right: var(--espacio-md);
+    background-color: var(--color-naranja-pedal);
+    color: var(--color-azul-noche);
+    font-family: var(--font-titulos);
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 0.25rem 0.65rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+/* Hacer que todas las imágenes tengan exactamente el mismo tamaño y proporción */
+#servicios article img {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover; 
+    border-radius: 4px;
+    margin-bottom: var(--espacio-md);
+}
+
+#servicios article h3 {
+    margin-top: var(--espacio-sm);
+    font-size: 1.25rem;
+}
+
+/* ==========================================================
+   4. Mejora de lectura en las tablas
+   ========================================================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--espacio-lg) 0;
+    background-color: #ffffff;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: var(--espacio-md); 
+    border: 1px solid #d1d5db;    
+    text-align: left;
+}
+
+th {
+    background-color: var(--color-azul-noche); /* Fondo de marca con alto contraste */
+    color: #ffffff;
+    font-family: var(--font-titulos);
+}
+
+tr:nth-child(even) {
+    background-color: #f9fafb; /* Cebra sutil para facilitar la lectura */
+}
+
+
+/* ==========================================================
+   5. Orden del formulario y accesibilidad
+   ========================================================== */
+form fieldset {
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: var(--espacio-lg);
+    background-color: #ffffff;
+    margin-bottom: var(--espacio-lg); 
+}
+
+/* Cada etiqueta sobre su campo */
+form label {
+    display: block;
+    margin-top: var(--espacio-md);
+    margin-bottom: var(--espacio-sm);
+    font-weight: 600;
+    color: var(--color-azul-noche);
+}
+
+/* Campos a todo el ancho disponible */
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="date"],
+form select,
+form textarea {
+    width: 100%;
+    padding: 0.75rem var(--espacio-md);
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    font-family: var(--font-textos);
+    background-color: #ffffff;
+}
+
+/* Botón de envío con relleno generoso */
+form button[type="submit"],
+form input[type="submit"] {
+    display: inline-block;
+    background-color: var(--color-verde-ruta);
+    color: white;
+    text-decoration: none;
+    padding: 1rem 2rem; /* Relleno generoso */
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: var(--espacio-lg);
+    transition: background-color 0.3s ease;
+}
+
+form button[type="submit"]:hover,
+form input[type="submit"]:hover {
+    background-color: var(--color-naranja-pedal);
+}
+
+form button[type="submit"]:focus,
+form input[type="submit"]:focus {
+    outline: none;
+    background-color: var(--color-naranja-pedal);
+    box-shadow: 0 0 0 3px rgba(243, 154, 43, 0.4);
+}
+
+/* ==========================================================
+   6. Botón flotante de WhatsApp permanente
+   ========================================================== */
+.btn-whatsapp {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    background-color: var(--color-verde-ruta);
+    color: #ffffff;
+    font-family: var(--font-titulos);
+    font-weight: 700;
+    text-decoration: none;
+    padding: 0.85rem 1.25rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    z-index: 1000;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-whatsapp:hover {
+    background-color: var(--color-naranja-pedal);
+    color: var(--color-azul-noche);
+    transform: translateY(-2px);
+}
+
+.btn-whatsapp:focus {
+    outline: 3px solid var(--color-azul-noche);
+    outline-offset: 2px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+#confirmacion{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+
+/* Actualizacion de menu de navegacion */
+/* Menú de navegación como contenedor flexible (Flexbox) con separación uniforme */
+/* Encabezado 100% semántico con Flexbox directo */
+header {
+    background-color: var(--color-azul-noche);
+    color: #ffffff;
+    padding: var(--espacio-md) var(--espacio-lg);
+    border-bottom: 4px solid var(--color-verde-ruta);
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;            
+    flex-wrap: wrap;
+    gap: var(--espacio-md);
+}
+
+header h1 {
+    color: #ffffff;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+/* Menú flexible con separación uniforme (sin márgenes ni inline-block antiguos) */
+#menu {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--espacio-lg); 
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+}
+
+#menu li {
+    margin: 0;
+}
+
+#menu li a {
+    text-decoration: none;
+    font-weight: 400;
+    border-radius: 5px;
+    color: var(--color-gris-asfalto);
+    transition: font-weight 0.3s ease;
+}
+
+#menu li a:hover {
+    background-color: var(--color-naranja-pedal);
+    font-weight: 900;
+    padding: 0.5rem 1rem;
+}
+
+#menu li a:focus {
+    font-weight: 900;
+    background-color: var(--color-naranja-pedal);
+    outline: 2px solid black;
+}
+
+footer {
+    background-color: var(--color-azul-noche);
+    color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    padding: var(--espacio-md) 0;
+    border-top: 4px solid var(--color-verde-ruta);
+}
+
+/* Contenedor de flota en cuadrícula (grid) */
+#flota {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--espacio-lg);
+    margin-top: var(--espacio-lg);
+}
+
+/* Cada tarjeta se estira para medir lo mismo que la más alta */
+#flota article {
+    position: relative; /* Necesario para albergar la etiqueta absoluta "Nuevo" sin desplazar contenido */
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: var(--espacio-md);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+
+/* ==========================================================
+   Portada de Inicio en dos columnas con CSS Grid 
+   ========================================================== */
+.portada {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    column-gap: 3rem;               
+    align-items: center;            
+    padding: 3rem 0;                
+}
+
+/* Estilo y espaciado para el título principal de la portada */
+.portada h2 {
+    font-size: 2.25rem;             
+    line-height: 1.2;
+    color: var(--color-azul-noche);
+    margin-top: 0;
+    margin-bottom: var(--espacio-lg);
+    grid-column: 1;
+}
+
+
+/* Botón de acción */
+.portada .reservar-a {
+    grid-column: 1;
+    justify-self: start;
+    padding: 0.85rem 2rem;
+}
+
+/* La imagen ocupa la segunda columna completa con proporción elegante */
+.portada img {
+    grid-column: 2;
+    grid-row: 1 / 4;                
+    width: 100%;
+    height: 420px;                  
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12); /* Sombra sutil y elegante */
+    border-radius: 8px;
+}
+
+/* Adaptación automática para pantallas móviles o tablets pequeñas */
+@media (max-width: 768px) {
+    .portada {
+        grid-template-columns: 1fr;
+        row-gap: var(--espacio-lg);
+    }
+
+    .portada img {
+        grid-column: 1;
+        grid-row: auto;
+        height: 280px;
+    }
+}
+
+/* La sección se convierte en el contenedor Grid directamente */
+.galeria-rutas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: var(--espacio-lg);
+    margin-top: 4rem;
+}
+
+/* El título y subtítulo ocupan todo el ancho superior de la rejilla */
+.galeria-rutas h2,
+.subtitulo-galeria {
+    grid-column: 1 / -1; 
+    margin: 0;
+}
+
+.galeria-rutas h2 {
+    font-size: 1.75rem;
+    color: var(--color-azul-noche);
+    margin-bottom: var(--espacio-sm);
+}
+
+.subtitulo-galeria {
+    color: var(--color-gris-asfalto);
+    margin-bottom: var(--espacio-md);
+}
+
+/* Estilo de cada tarjeta (article) */
+.tarjeta-ruta {
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: var(--espacio-md);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tarjeta-ruta img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: var(--espacio-md);
+}
+
+.tarjeta-ruta h3 {
+    font-size: 1.15rem;
+    color: var(--color-azul-noche);
+    margin: 0 0 var(--espacio-sm) 0;
+}
+
+.tarjeta-ruta p {
+    margin: 0;
+    color: var(--color-gris-asfalto);
+    font-size: 0.95rem;
+}
+
+.tarjeta-ruta strong {
+    color: var(--color-verde-ruta);
+}
+
+/* Responsivo para móviles */
+@media (max-width: 768px) {
+    .galeria-rutas {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================================
+   Layout de Reservas (Proporción 2:1 semántica)
+   ========================================================== */
+.formulario-reserva {
+    max-width: 65rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr; 
+    gap: var(--espacio-lg);
+    align-items: start;
+}
+
+/* Estilo para la barra lateral de contacto semántica (<aside>) */
+.horario-atencion {
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: var(--espacio-lg);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.horario-atencion h3 {
+    margin-top: 0;
+    color: var(--color-azul-noche);
+}
+
+.horario-atencion a {
+    color: var(--color-verde-ruta);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.horario-atencion a:hover {
+    text-decoration: underline;
+}
+
+/* Adaptación responsiva automática para dispositivos móviles */
+@media (max-width: 768px) {
+    .formulario-reserva {
+        grid-template-columns: 1fr; 
+    }
+}

@@ -179,3 +179,38 @@ Se diseñó desde cero combinando clases atómicas de utilidad directamente en e
 Diferencia clave entre un framework de componentes (Bootstrap) y uno utility-first (Tailwind):
 
 Un framework de componentes proporciona elementos visuales listos para usar con un diseño predeterminado (como tarjetas o botones con estilos fijos que luego se sobrescriben), mientras que un framework utility-first ofrece bloques de construcción atómicos de bajo nivel que permiten componer interfaces únicas directamente en el HTML sin necesidad de escribir CSS personalizado ni luchar contra estilos heredados.
+
+===================================================
+Del prototipo al proyecto real
+===================================================
+Clase encontrada: .btn-primary (Generada por el plugin de daisyUI).
+¿Por qué ocurre?: Aparece en el archivo output.css debido a que la directiva @plugin "daisyui" le indica a la CLI de Tailwind que debe compilar e inyectar todos los componentes de la librería. El código utiliza variables CSS y se envuelve en un bloque @layer para gestionar de forma eficiente la paleta de colores y la especificidad de los estilos sin que entren en conflicto con otras reglas.
+
+
+=========================================================
+LA NOCHE CABE EN TU CELULAR 
+=====================================================
+En el encabezado los enlaces se enciman con el logo y el boton de inscribite pareciera como si se desbordara
+
+Los titulos se saltan de linea por ser tan grandes 
+
+
+======================================
+COMPORTAMIENTO EN breakpoints
+=====================================
+360PX = El diseño de la pagina web completa se apila en una sola columna, los titulos cambian de tamaño correspondiente al tamaño de la pantalla 
+
+768PX = El encabezado pasa de columna a fila, las rutas se acomodan en 2 columnas
+
+1024px = Las rutas pasan a ocupar 3columnas, la sección de como funciona pasa se convierte en una fila con todos los pasos
+
+1280 = Tiene la misma acomodacion de todos los elementos que tiene en 1024 pero se ve un poco mas alejado.
+
+
+===========================================
+CODIGO LEGIBLE Y VEREDICTO
+===========================================
+ La curva de aprendizaje ha sido la muy similar con ambos frameworks puesto que el frontend siempre ha sido algo que he evitado, sin embargo, tuve muchos mas problemas con Bootstrap que con Tailwind, lo cual fue algo raro para mi puesto que anteriormente ya habia utilizado bootstrap y tailwind tenia una idea de lo que se trataba pero jamas habia hondeado tanto, sin embargo, creo que el hecho de que pueda personalizar mas y pueda jugar con las configuraciones de los elementos en tailwind mientras que con bootstrap son pocos las funciones que puedo mover hizo que se me volviera mucho mas complejo.
+
+ Pienso que la personalizacion y el producto final de las cosas adecuadas a lo que uno quiere desde un principio es algo que pesa mucho mas y por eso pienso que es mas facil trabajar con tailwind y seria mas recomendable migrar rueda libre a tailwind, ademas de que esa libreria de daisyui fue una gran ayuda para mi puesto que los elementos ademas que ya estaban creados como en bootstrap podia jugar con sus clases.
+
