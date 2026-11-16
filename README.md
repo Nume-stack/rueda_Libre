@@ -1,3 +1,8 @@
+===================================
+ACLARACIONES IMPORTANTES
+===================================
+Con el fin de conservar todo lo hecho durante toda la trayectoria, decidi dejar los archivos html y css puesto que en algun momento me pueden servir como manera de repaso, por ende, el proyecto completo interactua con HTML y CSS purr (index.html que esta en la raiz, carpeta paginas y carpeta css que en este caso consumen styles-copy.css), Boostrap version 5.3 (Carpeta pruebas) y tailwindcss (Carpeta nocturna).
+
 la URL completa = http://127.0.0.1:5501/index.html
 el protocolo = http
 el hosT = http://127.0.0.1
