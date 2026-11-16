@@ -519,6 +519,17 @@ footer {
     color: var(--color-verde-ruta);
 }
 
+#libre-nocturna{
+    background-color: var(--color-verde-ruta);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 0.85rem 1.25rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
 /* Responsivo para móviles */
 @media (max-width: 768px) {
     .galeria-rutas {
