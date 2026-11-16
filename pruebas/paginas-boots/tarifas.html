@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rueda Libre: Tarifas de alquiler de bicicletas en Medellín.">
+    <!--Cargo de google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap 5.3 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Tarifas y Rutas | Rueda Libre</title>
+</head>
+
+<body>
+    <header class="sticky-top shadow-sm">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-success border-4 px-3 py-3">
+            <div class="container-fluid">
+                <a class="navbar-brand text-white fw-bold fs-4" href="../index-prueba.html">
+                    Rueda Libre <span class="fs-6 fw-normal text-light d-none d-sm-inline">| Alquiler en Medellín</span>
+                </a>
+
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav align-items-lg-center gap-lg-4 mt-3 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"  href="../index-prueba.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active fw-bold link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" aria-current="page" href="#">Tarifas y Rutas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="./reservar.html">Reservas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="../../nocturna/index.html">Rueda Nocturna</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <h1 class="text-center">Rueda Libre | Alquiler de bicicletas en Medellín</h1>
+
+    <main class="container my-5">
+        <h2 class="mb-4 text-center">Tarifas y Rutas Disponibles</h2>
+
+        <div class="row g-4">
+
+            <div class="col-12 col-lg-8">
+
+                <section class="mb-5">
+                    <div class="table-responsive">
+                        <table>
+                            <caption>Tarifas de alquiler de bicicletas</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Tipo de bicicleta</th>
+                                    <th scope="col">1 h</th>
+                                    <th scope="col">Medio dia (4 h)</th>
+                                    <th scope="col">Dia completo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Urbana</td>
+                                    <td>$10.000</td>
+                                    <td>$30.000</td>
+                                    <td>$50.000</td>
+                                </tr>
+                                <tr>
+                                    <td>Montaña</td>
+                                    <td>$15.000</td>
+                                    <td>$45.000</td>
+                                    <td>$70.000</td>
+                                </tr>
+                                <tr>
+                                    <td>Eléctrica</td>
+                                    <td>$25.000</td>
+                                    <td>$70.000</td>
+                                    <td>$110.000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section id="recorridos" class="mb-4">
+                    <div class="table-responsive">
+                        <table>
+                            <caption>Rutas Establecidas</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Recorrido</th>
+                                    <th scope="col">Distancia</th>
+                                    <th scope="col">Duracion</th>
+                                    <th scope="col">Nivel</th>
+                                    <th scope="col">Precio por persona</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Rio y parques</td>
+                                    <td>12 km</td>
+                                    <td>2 h</td>
+                                    <td>Facil</td>
+                                    <td>$45.000</td>
+                                </tr>
+                                <tr>
+                                    <td>Sabores de barrio</td>
+                                    <td>18 km</td>
+                                    <td>3 h</td>
+                                    <td>Medio</td>
+                                    <td>$60.000</td>
+                                </tr>
+                                <tr>
+                                    <td>Reto los palmas</td>
+                                    <td>25 km</td>
+                                    <td>4 h</td>
+                                    <td>Dificil</td>
+                                    <td>$85.000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mt-3">
+                        <button type="button" class="btn btn-success">Reservar Ahora</button>
+                    </div>
+                </section>
+
+            </div>
+
+
+            <aside class="col-12 col-lg-4 d-flex flex-column gap-4">
+
+                <div class="nota-accesorios p-4 bg-white border rounded shadow-sm">
+                    <h3 class="h5 mb-3">📌 Accesorios Incluidos</h3>
+                    <p class="small text-muted m-0">Todos nuestros alquileres incluyen un <strong>casco homologado de
+                            alta seguridad</strong> y un <strong>candado antirrobo con llave</strong> sin costo
+                        adicional. El uso del casco es obligatorio durante todo el trayecto por normativas de seguridad
+                        vial.</p>
+                </div>
+
+                <div id="que-llevar" class="p-4 bg-white border rounded shadow-sm">
+                    <h3 class="h5 mb-3">¿Qué debes llevar?</h3>
+                    <ul class="small text-muted ps-3 m-0">
+                        <li class="mb-2">Documento de identidad original (Cédula o Pasaporte).</li>
+                        <li class="mb-2">Ropa deportiva cómoda y calzado cerrado.</li>
+                        <li class="mb-2">Protector solar e hidratación personal.</li>
+                        <li>Depósito reembolsable o tarjeta de respaldo.</li>
+                    </ul>
+                </div>
+
+            </aside>
+
+        </div>
+    </main>
+
+    <div class="float-end">
+        <button type="button" class="btn btn-outline-success">
+            <a href="https://wa.me/573000000000" class="text-decoration-none text-success" target="_blank"
+                rel="noopener noreferrer">
+                WhatsApp
+            </a>
+        </button>
+    </div>
+    <br>
+    <br>
+
+    <div class="card-group">
+        <div class="card">
+            <div class="card-footer">
+                <section>
+                    <h3>Rueda Libre</h3>
+                    <p>&copy; 2026 Rueda Libre. Explora Medellín sobre dos ruedas.</p>
+                </section>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-footer">
+                <section>
+                    <h3>Contacto</h3>
+                    <p>Correo: <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a></p>
+                    <p>Ubicación: Medellín, Colombia</p>
+                </section>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-footer">
+                <section>
+                    <h3>Horario</h3>
+                    <p>Lunes a viernes: 7:00 a.m. - 7:00 p.m.</p>
+                    <p>Sabados, Domingos y festivos: 6:00 a.m. - 2:00 p.m.</p>
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Bootstrap 5.3 JS Bundle CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -527,7 +527,7 @@ footer {
 }
 
 /* ==========================================================
-   Layout de Reservas (Proporción 2:1 semántica)
+   Reservas 
    ========================================================== */
 .formulario-reserva {
     max-width: 65rem;
@@ -540,7 +540,7 @@ footer {
     align-items: start;
 }
 
-/* Estilo para la barra lateral de contacto semántica (<aside>) */
+/* Estilo para la barra lateral de contacto semántica */
 .horario-atencion {
     background-color: #ffffff;
     border: 1px solid #d1d5db;
